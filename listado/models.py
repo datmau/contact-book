@@ -34,7 +34,7 @@ class Contacto(models.Model):
     #Relacion quiere decir que una persona puede tener varios contactos
     persona = models.ForeignKey(Persona, null=True, blank=True, on_delete=models.CASCADE)
     # Relacion quiere decir que una persona puede pertenecer a varios grupos
-    grupo = models.ManyToManyField(Grupo, blank=True, null=True)
+    grupo = models.ManyToManyField(Grupo, blank=True)
     def __str__(self):
         completo= self.nombre +" "+self.apellidos
         return completo
