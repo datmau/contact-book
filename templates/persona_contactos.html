@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    LISTADO DE PERSONAS
+{% endblock %}
+
+{% block contenido %}
+    {% for contacto in contactos %}
+        <h1>{{ contacto.nombre }} {{ contacto.apellidos }}</h1>
+        <h2> {{ contacto.telefono }}</h2>
+        <p> {{ contacto.correo }}</p>
+    {% endfor %}
+{% endblock %}

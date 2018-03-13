@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block contenido %}
+     <h1>ESTA ES LA LISTA DE CONTACTOS</h1>
+    {% for contacto in contactos %}
+        <h1>{{ contacto.nombre }} {{ contacto.apellidos }}</h1>
+        <h2> {{ contacto.telefono }}</h2>
+        <p> {{ contacto.correo }}</p>
+    {% endfor %}
+{% endblock %}
