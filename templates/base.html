@@ -25,15 +25,25 @@
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'home' %}">Inicio <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+    <li class="nav-item">
         <a class="nav-link" href="#">Acerca de</a>
       </li>
-      <li class="nav-item">
+         <li class="nav-item">
         <a class="nav-link" href="{% url 'listado:contacto_lista' %}">Contactos</a>
       </li>
          <li class="nav-item">
         <a class="nav-link" href="{% url 'listado:contacto_crear' %}">Nuevo Contacto</a>
       </li>
+
+     {% if user.is_authenticated %}
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+     {% else %}
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+     {% endif %}
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" placeholder="Busqueda" type="text">
