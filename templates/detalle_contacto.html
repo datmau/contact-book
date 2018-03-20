@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block titulo %}
+    DETALLE
+{% endblock %}
+
+{% block contenido %}
+    <div class="container" style="padding-top: 2rem; padding-left: 1rem; width: auto;">
+        <div class="card" style="width: 20rem;">
+  <div class="card-body">
+      <h4>Nombre: {{ object.nombre }} {{ object.apellidos }}</h4>
+      <img src="{% static object.foto.path %}" class="card-img-top  ">
+      <h5>Telefono: {{ object.telefono }}</h5>
+      <h5>Fijo: {{ object.fijo }}</h5>
+      <h5>Correo: {{ object.correo }}</h5>
+      <h6>GRUPO/S</h6>
+     {% for grupo in object.grupo.all %}
+        <h6>{{ grupo }}</h6>
+     {% endfor %}
+
+
+  </div>
+    </div>
+
+    <a href="{% url 'listado:contacto_lista' %}" class="btn btn-info"> REGRESAR AL LISTADO</a>
+</div>
+{% endblock %}

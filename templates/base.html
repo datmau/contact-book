@@ -1,24 +1,83 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block titulo %}
-    
     {% endblock %}</title>
+
+    {% block extrastatic %}
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    {% endblock %}
 </head>
 <body>
 {% block navbar %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">CONTACTOS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation" style="">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Acerca de</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'listado:contacto_lista' %}">Contactos</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="{% url 'listado:contacto_crear' %}">Nuevo Contacto</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" placeholder="Busqueda" type="text">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
 {% endblock %}
-
-<h1> ESTO SE HEREDA DE LA BASE</h1>
 
 {% block contenido %}
 
 {% endblock %}
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 {% block footer %}
+<!--Footer-->
+<footer class=" navbar-expand-lg" >
+        <div class="container bg-light ">
+            <div class="row">
+                <div class="col-sm-6 ">
+                    <h5>Contactos</h5>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Registro</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <h5>Redes Sociales</h5>
+                    <ul class="social-network social-circle">
+                        <li><a href="https://www.facebook.com/UPS.NetACQ/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/upsnetacq" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://upsnetac.wordpress.com/" class="icoWordpress" title="Wordpress"><i class="fa fa-wordpress"></i></a></li>
+                    </ul>
+				</div>
+            </div>
+        </div>
 
+
+    </footer>
 {% endblock %}
+
 </body>
 </html>

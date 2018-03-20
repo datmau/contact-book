@@ -1,9 +1,32 @@
 {% extends 'base.html' %}
+{% block titulo %}
+    TODOS LOS CONTACTOS
+{% endblock %}
+
 {% block contenido %}
-     <h1>ESTA ES LA LISTA DE CONTACTOS</h1>
-    {% for contacto in contactos %}
-        <h1>{{ contacto.nombre }} {{ contacto.apellidos }}</h1>
-        <h2> {{ contacto.telefono }}</h2>
-        <p> {{ contacto.correo }}</p>
-    {% endfor %}
+    <table class="table">
+        <thead>
+        <tr>
+        <th> Nombre</th>
+        <th> Apellidos</th>
+        <th> Telefono</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contacto in contactos %}
+            <tr>
+                <td> {{ contacto.nombre }}</td>
+                <td> {{ contacto.apellidos }}</td>
+                <td> {{ contacto.telefono }}</td>
+                <td><a href="{% url 'listado:contacto_detalle' contacto.id %}" class="btn btn-primary">Detalle</a></td>
+                <td><a href="{% url 'listado:contacto_editar' contacto.id %}" class="btn btn-secondary">Editar</a></td>
+
+            </tr>
+        {% endfor %}
+
+
+        </tbody>
+
+    </table>
+
 {% endblock %}

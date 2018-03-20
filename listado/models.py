@@ -27,6 +27,7 @@ class Grupo(models.Model):
 class Contacto(models.Model):
     nombre = models.CharField(max_length=50)
     apellidos = models.CharField(max_length=100)
+    foto = models.ImageField(upload_to='static/images', null=True)
     telefono = models.IntegerField()
     fijo = models.IntegerField()
     correo = models.EmailField(max_length=70)

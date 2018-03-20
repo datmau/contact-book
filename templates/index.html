@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block titulo %}
 ESTE TITULO DE PAGINA
 {% endblock %}
 {% block contenido %}
+
     <h1>ESTA ES MI PRIMERA VISTA LLAMADA index.html</h1>
+    <img src="{% static 'images/epicu.jpg' %}">
 {% endblock %}
 

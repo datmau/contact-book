@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+CREAR CONTACTO NUEVO
+{% endblock %}
+
+{% block contenido %}
+    <h3>NUEVO CONTACTO</h3>
+    <div class="form-group border-dark " style=" width: 60rem; padding-left: 25rem;">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">GUARDAR</button>
+            <a class="btn btn-secondary" src="{% url 'listado:contacto_lista' %}">Cancelar</a>
+        </form>
+    </div>
+{% endblock %}
