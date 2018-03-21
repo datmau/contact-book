@@ -20,5 +20,6 @@ from listado.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', index, name = 'home'),
-    path('listado/', include('listado.urls', namespace='listado'))
+    path('listado/', include('listado.urls', namespace='listado')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

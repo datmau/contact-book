@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'listado',
 ]
 
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -116,6 +118,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+#DIRECCION URL DEL LOGIN
+
+LOGIN_REDIRECT_URL = '/index'
+LOGOUT_REDIRECT_URL = '/index'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
